@@ -2,5 +2,7 @@
 Flat-Pack CMS
 
 `yarn install`
+
 `npm run build`
+
 `npm start`
