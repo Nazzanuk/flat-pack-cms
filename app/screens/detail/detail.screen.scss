@@ -1,0 +1,25 @@
+@import "../../global/mixins";
+
+[data-screen="detail"] {
+  //flex: 1 1 auto;
+  //display: flex;
+  //flex-direction: column;
+  //width: 100vw;
+  //padding-left: 0 !important;
+  //padding-right: 0 !important;
+  //
+  //@include mobile {
+  //  padding-top: 0 !important;
+  //  padding-bottom: 0px !important;
+  //}
+
+
+  .detail-header {
+    .app-btn {
+      margin-left: 30px;
+    }
+  }
+
+
+
+}

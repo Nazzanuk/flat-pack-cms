@@ -1,0 +1,144 @@
+@import "../../global/mixins";
+
+[data-screen="asset"] {
+  //flex: 1 1 auto;
+  //display: flex;
+  //flex-direction: column;
+  //width: 100vw;
+  //padding-left: 0 !important;
+  //padding-right: 0 !important;
+  //
+  //@include mobile {
+  //  padding-top: 0 !important;
+  //  padding-bottom: 0px !important;
+  //}
+
+
+  .asset-header {
+
+    h1 {
+      margin-right: 30px;
+    }
+  }
+
+  .asset-grid {
+    background: white;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    border: 1px solid #eee;
+
+    .grid-header, .grid-asset {
+      display: grid;
+      //grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-auto-columns: 1fr;
+
+
+      padding: 0 10px;
+
+      span {
+        padding: 10px;
+        //border-left: 1px solid black;
+        //border-bottom: 1px solid black;
+        min-height: 40px;
+        display: flex;
+        //align-items: center;
+        flex-direction: row;
+        align-items: baseline;
+
+        img {
+          height: 80px;
+          border-radius: 4px;
+        }
+
+        .status-icon {
+          font-size: 10px;
+          color: #bd9b04;
+
+          &.published {
+            color: green;
+          }
+
+        }
+      }
+    }
+
+    .grid-header {
+
+      font-weight: 600;
+
+      span {
+        align-items: center;
+      }
+    }
+
+    .grid-asset {
+      //border-top: 1px solid black;
+      //border-right: 1px solid black;
+
+      //background: #f7f7f7;
+
+      &:nth-child(2n) {
+        background: #f7f7f7;
+      }
+
+      span {
+        //padding: 5px 10px;
+
+        a {
+          color: $primary;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+
+  .asset-search {
+    margin-bottom: 30px;
+
+
+    .search-input {
+      background: white;
+      height: 40px;
+      max-width: 600px;
+      box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.05);
+
+      display: flex;
+      flex-direction: row;
+      border-radius: 4px;
+      overflow: hidden;
+      color: #333;
+      padding: 0 10px;
+      border: 1px solid #eee;
+
+      .fal {
+        height: 40px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #ccc;
+      }
+
+      input, select {
+        height: 40px;
+        background: none;
+        border: none;
+        //padding: 0 20px;
+        font: inherit;
+        font-weight: 400;
+        display: flex;
+        flex: 1 1 auto;
+        outline: none;
+        appearance:none;
+        -webkit-appearance:none;
+
+        padding: 0 10px;
+      }
+    }
+
+  }
+
+}
