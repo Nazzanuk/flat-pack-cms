@@ -31,7 +31,7 @@ async function StartServer() {
         method : "GET",
         path   : "/{param*}",
         handler: {
-            file: "/app/app.html",
+            file: path.resolve("./app/app.html"),
         },
     });
 
