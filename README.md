@@ -3,6 +3,8 @@ Flat-Pack CMS
 
 `yarn install`
 
-`npm run build`
+`npm run dev-client` for developent
 
-`npm start`
+or 
+
+`npm run build` + `npm start` just to run
