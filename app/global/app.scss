@@ -174,10 +174,12 @@ html body {
     //min-height : 100vh;
     opacity: 0;
     padding: 0 30px;
+    transform: translateX(-10px);
 
     &[data-visible="true" ] {
       opacity: 1;
-      transition: 1.0s;
+      transition: .6s;
+      transform: translateX(0);
     }
   }
 
@@ -237,6 +239,10 @@ html body {
     font-weight: 600;
     cursor: pointer;
     width: fit-content;
+    line-height: 1;
+    text-align: center;
+
+    @include buttonize;
 
     &.btn-small {
       height: 30px;
@@ -524,9 +530,18 @@ html body {
 
   .trumbowyg-box {
     margin: 0;
+    background: white;
+    border-radius: 4px;
+
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+  }
+
+  .trumbowyg-button-pane {
+    background: white;
   }
 
   .trumbowyg-box, .trumbowyg-editor, .trumbowyg-textarea {
-    min-height: 200px;
+    min-height: 300px;
   }
 }

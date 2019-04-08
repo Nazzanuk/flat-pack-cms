@@ -234,10 +234,12 @@ html body {
   html body [data-screen] {
     flex: 1 1 0;
     opacity: 0;
-    padding: 0 30px; }
+    padding: 0 30px;
+    transform: translateX(-10px); }
     html body [data-screen][data-visible="true"] {
       opacity: 1;
-      transition: 1.0s; }
+      transition: .6s;
+      transform: translateX(0); }
   html body [data-component][data-visible="false"] {
     opacity: 0; }
   html body [data-component][data-visible="true"] {
@@ -269,7 +271,16 @@ html body {
     padding: 0 20px;
     font-weight: 600;
     cursor: pointer;
-    width: fit-content; }
+    width: fit-content;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: .15s;
+    user-select: none; }
+    html body .app-btn:hover {
+      transform: scale(1.05); }
+    html body .app-btn:active {
+      transform: scale(0.95); }
     html body .app-btn.btn-small {
       height: 30px;
       font-size: 12px;
@@ -457,9 +468,15 @@ html body {
         height: 100px;
         margin: 10px 0; }
   html body .trumbowyg-box {
-    margin: 0; }
+    margin: 0;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee; }
+  html body .trumbowyg-button-pane {
+    background: white; }
   html body .trumbowyg-box, html body .trumbowyg-editor, html body .trumbowyg-textarea {
-    min-height: 200px; }
+    min-height: 300px; }
 
 /**
  * Trumbowyg v2.15.1 - A lightweight WYSIWYG editor

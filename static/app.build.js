@@ -157,7 +157,7 @@ function (_Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
-    stores_live_store__WEBPACK_IMPORTED_MODULE_6__["default"].ChangePage();
+    stores_live_store__WEBPACK_IMPORTED_MODULE_6__["default"].ShowPage();
     console.warn("props", props);
     return _this;
   }
@@ -375,25 +375,26 @@ var AssetScreen =
 function (_Component) {
   _inherits(AssetScreen, _Component);
 
-  function AssetScreen(props) {
+  function AssetScreen() {
+    var _getPrototypeOf2;
+
     var _this;
 
     _classCallCheck(this, AssetScreen);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(AssetScreen).call(this, props));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AssetScreen)).call.apply(_getPrototypeOf2, [this].concat(args)));
     _this.state = {};
-    stores_live_store__WEBPACK_IMPORTED_MODULE_6__["default"].ShowPage();
     return _this;
   }
 
   _createClass(AssetScreen, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      stores_live_store__WEBPACK_IMPORTED_MODULE_6__["default"].ShowPage();
-
-      if (prevProps.location.pathname !== this.props.location.pathname) {
-        this.init();
-      }
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      stores_live_store__WEBPACK_IMPORTED_MODULE_6__["default"].ChangePage();
     }
   }, {
     key: "render",
@@ -403,8 +404,9 @@ function (_Component) {
         "data-visible": stores_live_store__WEBPACK_IMPORTED_MODULE_6__["default"].isContentVisible
       }, React.createElement("div", {
         className: "flex flex-row asset-header"
-      }, React.createElement("h1", null, "My IKEA Articles"), React.createElement("div", {
-        className: "app-btn"
+      }, React.createElement("h1", null, "My IKEA Articles"), React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "app-btn",
+        to: '/detail'
       }, React.createElement("div", {
         className: "far fa-plus"
       }), "Create New")), React.createElement("div", {
@@ -663,19 +665,10 @@ function (_Component) {
   _createClass(DetailScreen, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      stores_live_store__WEBPACK_IMPORTED_MODULE_7__["default"].ShowPage();
+      stores_live_store__WEBPACK_IMPORTED_MODULE_7__["default"].ChangePage();
       $.trumbowyg.svgPath = "/static/lib/icons.svg";
       $("#trumbowyg-demo").trumbowyg();
       $("#trumbowyg-demo").trumbowyg("html", "<h3>Let nature become one with your bed</h3><p>Climbing plants make great bedside companions. They add a fresh air and can easily be made to mesh with most irregular forms. Like this tubing headboard, that lets you blur the lines between ivy and bed altogether.</p>");
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      stores_live_store__WEBPACK_IMPORTED_MODULE_7__["default"].ShowPage();
-
-      if (prevProps.location.pathname !== this.props.location.pathname) {
-        this.init();
-      }
     }
   }, {
     key: "render",
@@ -686,7 +679,7 @@ function (_Component) {
       }, React.createElement("div", {
         className: "flex flex-row detail-header"
       }, React.createElement("h1", null, "Edit Article"), React.createElement("div", {
-        className: "app-btn white"
+        className: "app-btn"
       }, React.createElement("div", {
         className: "far fa-plus"
       }), "Create New"), React.createElement("div", {
@@ -744,6 +737,14 @@ function (_Component) {
         className: "app-field"
       }, React.createElement("div", {
         className: "field-label"
+      }, "Content ", React.createElement("i", {
+        className: "fas fa-question field-question"
+      })), React.createElement("div", {
+        id: "trumbowyg-demo"
+      })), React.createElement("div", {
+        className: "app-field"
+      }, React.createElement("div", {
+        className: "field-label"
       }, "Featured Image", React.createElement("i", {
         className: "fas fa-question field-question"
       }, React.createElement("div", {
@@ -783,15 +784,7 @@ function (_Component) {
         className: "app-btn btn-small primary"
       }, "Living"), React.createElement("i", {
         className: "fal fa-plus app-btn btn-small white"
-      }))), React.createElement("div", {
-        className: "app-field"
-      }, React.createElement("div", {
-        className: "field-label"
-      }, "Content ", React.createElement("i", {
-        className: "fas fa-question field-question"
-      })), React.createElement("div", {
-        id: "trumbowyg-demo"
-      })), React.createElement("br", null), React.createElement("div", {
+      }))), React.createElement("br", null), React.createElement("div", {
         className: "app-btn primary"
       }, React.createElement("div", {
         className: "far fa-save"

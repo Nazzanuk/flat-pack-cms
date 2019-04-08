@@ -14,17 +14,8 @@ import LiveStore                            from "stores/live.store";
 class AssetScreen extends Component {
     state = {};
 
-    constructor(props) {
-        super(props);
-
-        LiveStore.ShowPage();
-    };
-
-    componentDidUpdate(prevProps) {
-        LiveStore.ShowPage();
-        if (prevProps.location.pathname !== this.props.location.pathname) {
-            this.init();
-        }
+    componentDidMount() {
+        LiveStore.ChangePage();
     }
 
     render() {
@@ -34,10 +25,10 @@ class AssetScreen extends Component {
 
                 <div className="flex flex-row asset-header">
                     <h1>My IKEA Articles</h1>
-                    <div className="app-btn">
+                    <Link className="app-btn" to={'/detail'}>
                         <div className="far fa-plus"/>
                         Create New
-                    </div>
+                    </Link>
 
                 </div>
 

@@ -10,26 +10,18 @@ import * as trumbowyg                               from "trumbowyg";
 import ReactDOM from "react-dom";
 
 
-import LiveStore                            from "stores/live.store";
+import LiveStore from "stores/live.store";
 
 
 class DetailScreen extends Component {
     state = {};
 
     componentDidMount() {
-        LiveStore.ShowPage();
+        LiveStore.ChangePage();
 
         $.trumbowyg.svgPath = "/static/lib/icons.svg";
         $("#trumbowyg-demo").trumbowyg();
         $("#trumbowyg-demo").trumbowyg("html", `<h3>Let nature become one with your bed</h3><p>Climbing plants make great bedside companions. They add a fresh air and can easily be made to mesh with most irregular forms. Like this tubing headboard, that lets you blur the lines between ivy and bed altogether.</p>`);
-
-    }
-
-    componentDidUpdate(prevProps) {
-        LiveStore.ShowPage();
-        if (prevProps.location.pathname !== this.props.location.pathname) {
-            this.init();
-        }
     }
 
     render() {
@@ -39,7 +31,7 @@ class DetailScreen extends Component {
 
                 <div className="flex flex-row detail-header">
                     <h1>Edit Article</h1>
-                    <div className="app-btn white">
+                    <div className="app-btn">
                         <div className="far fa-plus"/>
                         Create New
                     </div>
@@ -89,6 +81,12 @@ class DetailScreen extends Component {
                         </div>
 
                         <div className="app-field">
+                            <div className="field-label">Content <i className="fas fa-question field-question"/></div>
+
+                            <div id="trumbowyg-demo"/>
+                        </div>
+
+                        <div className="app-field">
                             <div className="field-label">
                                 Featured Image
                                 <i className="fas fa-question field-question">
@@ -123,17 +121,6 @@ class DetailScreen extends Component {
                                 <div className="app-btn btn-small primary">Living</div>
                                 <i className="fal fa-plus app-btn btn-small white"/>
                             </div>
-
-                        </div>
-
-                        <div className="app-field">
-                            <div className="field-label">Content <i className="fas fa-question field-question"/></div>
-                            {/*<div className="field-input">*/}
-                            {/*<input type="text" value="hello"/>*/}
-                            {/*</div>*/}
-
-                            <div id="trumbowyg-demo"></div>
-
 
                         </div>
 
@@ -178,7 +165,8 @@ class DetailScreen extends Component {
                                 <div className="flex flex-row">
                                     <div className="app-btn btn-small"><i className="far fa-check"/> Approve</div>
                                     <div style={{margin: "auto"}}/>
-                                    <div className="app-btn btn-small white"><i className="far fa-repeat"/> Compare to Live
+                                    <div className="app-btn btn-small white">
+                                        <i className="far fa-repeat"/> Compare to Live
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +176,7 @@ class DetailScreen extends Component {
                             <div className="widget-header">Author</div>
 
                             <div className="widget-content">
-                                <div className="app-field" style={{margin:"10px 0 0"}}>
+                                <div className="app-field" style={{margin: "10px 0 0"}}>
                                     {/*<div className="field-label">Author <i className="fas fa-question field-question"/>*/}
                                     {/*</div>*/}
                                     <div className="field-input">

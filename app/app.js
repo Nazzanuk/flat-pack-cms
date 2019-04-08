@@ -26,7 +26,7 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        LiveStore.ChangePage();
+        LiveStore.ShowPage();
         console.warn("props", props);
     }
 
