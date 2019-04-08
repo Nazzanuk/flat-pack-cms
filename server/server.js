@@ -1,7 +1,9 @@
 import path from "path";
 import "babel-polyfill";
 
-import Hapi from "hapi";
+import Hapi  from "hapi";
+import Inert from "inert";
+
 
 const port = process.env.PORT || 4040;
 
@@ -10,6 +12,9 @@ async function StartServer() {
     const hapiServer = new Hapi.server({
         port: port,
     });
+
+
+    await hapiServer.register(Inert);
 
     hapiServer.route({
         method : "GET",
@@ -26,8 +31,8 @@ async function StartServer() {
         method : "GET",
         path   : "/{param*}",
         handler: {
-            file:"/app/app.html"
-        }
+            file: "/app/app.html",
+        },
     });
 
     await hapiServer.start();

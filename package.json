@@ -16,7 +16,6 @@
     "graphql": "^14.1.1",
     "hapi": "^18.1.0",
     "hapi-require-https": "^3.0.1",
-    "i": "^0.3.6",
     "ignore-loader": "^0.1.2",
     "ignore-styles": "^5.0.1",
     "inert": "^5.1.2",
