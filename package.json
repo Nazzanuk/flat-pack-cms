@@ -70,6 +70,6 @@
     "build": "webpack --config client.config.js && webpack --config server.config.js",
     "dev": "webpack --config client.config.js --watch & webpack --config server.config.js --watch & nodemon ./dist/server.js",
     "dev-client": "webpack --config client.config.js --watch & node ./dist/server.js",
-    "start": "NODE_ENV=production node ./dist/server.js"
+    "start": "node ./dist/server.js"
   }
 }
